@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data package</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .mySwiper2 {
+        height: 500px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 23px rgb(0 0 0 / 25%);
+        margin-bottom: 20px;
+      }
+
+      .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+
+      .mySwiper .swiper-slide {
+        width: auto;
+        height: 150px;
+        opacity: 0.4;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        background: rgba(240, 240, 240, 0.72);
+        color: black;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 12px;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="myHeader" class="navbar relative navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="">Destinations</a>
+            <a class="nav-item nav-link" href="">Hotels</a>
+            <a class="nav-item nav-link" href="">Flights</a>
+            <a class="nav-item nav-link" href="">Bookings</a>
+            <a class="nav-item nav-link" href="">About Us</a>
+            <a class="nav-item nav-link" href="">Contact Us</a>
+            <div class="dropdown">
+              <a
+                href=""
+                class="nav-item nav-link dropdown-toggle"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                EN
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">EN</a>
+                <a class="dropdown-item" href="#">UR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="reserveModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="reserveModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-body res-modal-header">
+            <div class="res-modal-header">
+              <h3>Reserve Now & Pay Later</h3>
+              <p>
+                We'll reserve your spot today, and you can cancel up to two
+                days* before your experience without making a payment. Secure
+                your spot with ease, stay flexible, and never miss out.
+              </p>
+            </div>
+            <div class="res-modal-content">
+              <h4>How it works</h4>
+              <ul>
+                <li>
+                  <h5>Find your experience</h5>
+                  <p>
+                    Choose the experience you want knowing you can secure your
+                    spot without being locked in.
+                  </p>
+                </li>
+                <li>
+                  <h5>Make a reservation</h5>
+                  <p>
+                    Reserve now and pay later to secure your spot,
+                    commitment-free.
+                  </p>
+                </li>
+                <li>
+                  <h5>Choose when to pay</h5>
+                  <p>
+                    Come back to pay once your plans are set, or let auto-pay
+                    kick in two days* before your experience.
+                  </p>
+                </li>
+                <li>
+                  <h5>Enjoy your experience</h5>
+                  <p>Now you're all set! Have a great time.</p>
+                </li>
+              </ul>
+            </div>
+            <a href="" class="res-modal-link"
+              >Frequently Asked Questions|Terms & Conditions</a
+            >
+            <p class="res-modal-para">
+              *Up to 9 days depending on the booking/product
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="/">Popular destination in Turkey</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/">Antalya</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Popular Packages
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="popular-packages">
+      <div class="container">
+        <div class="popular-packages-wrapper">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="inner-head"><h2>Best of Istanbul</h2></div>
+
+              <div class="pp-left">
+                <div class="pp-left-header">
+                  <h3>1, 2 or 3-Day Private Guided Istanbul Tour</h3>
+                </div>
+                <div
+                  style="
+                    --swiper-navigation-color: #fff;
+                    --swiper-pagination-color: #fff;
+                  "
+                  class="swiper mySwiper2"
+                >
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/image-large.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/boat-large.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/image 2.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/image-6.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-5.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-6.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-7.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-8.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-9.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-10.jpg"
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/image-large.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/boat-large.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/image 2.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/image-6.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-5.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-6.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-7.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-8.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-9.jpg"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="https://swiperjs.com/demos/images/nature-10.jpg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="pp-right">
+                <button
+                  class="btn pp-reserve-btn"
+                  data-toggle="modal"
+                  data-target="#reserveModalCenter"
+                >
+                  Reserve Now & Pay Later
+                </button>
+                <div
+                  class="d-flex align-items-center justify-content-end mt-4 mb-2"
+                >
+                  <div class="dropdown">
+                    <a
+                      href=""
+                      class="nav-item nav-link dropdown-toggle share-btn"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <img src="assets/img/share.png" alt="" />
+                      Share
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">EN</a>
+                      <a class="dropdown-item" href="#">UR</a>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="" class="favourite-btn"
+                      ><img src="assets/img/favourite-i.png" alt="" /> Save to
+                      wishlist</a
+                    >
+                  </div>
+                </div>
+                <div class="pp-r-card">
+                  <div class="pp-card-header">
+                    <div class="d-flex align-items-center">
+                      <p class="mr-3">From</p>
+                      <h5>$200.90</h5>
+                    </div>
+                    <p class="mt-2">per group (up to 8)</p>
+                    <p class="mt-2 txt-orange">Lowest Price Guarantee</p>
+                  </div>
+                  <hr />
+                  <div class="pp-card-form">
+                    <h4>Select Date and Travelers</h4>
+                    <form>
+                      <div class="form-group">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          aria-describedby=""
+                          placeholder="3 Travellers"
+                        />
+                        <img src="assets/img/person-i.png" alt="" />
+                      </div>
+                      <button type="submit" class="btn">
+                        Check Availability
+                      </button>
+                    </form>
+                  </div>
+                  <div class="pp-card-footer">
+                    <div class="mt-4">
+                      <h5>Reserve Now & Pay Later</h5>
+                      <p>Secure your spot while staying flexible</p>
+                    </div>
+                    <div class="mt-3">
+                      <h5>Free cancellation</h5>
+                      <p>Up to 24 hours in advance.Learn more</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="poppular-packages-grid-details">
+            <ul class="top-grid">
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/safety-i.png" alt="" /> Safety measures
+                </p>
+              </li>
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/clock-i.png" alt="" /> 7 hours (Approx.)
+                </p>
+              </li>
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/chat-i.png" alt="" /> Offered in: English
+                  and 5 more
+                </p>
+              </li>
+            </ul>
+            <ul class="top-grid">
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/mobile-i.png" alt="" /> Mobile ticket
+                </p>
+              </li>
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/car-i.png" alt="" /> Hotel pickup offered
+                </p>
+              </li>
+              <li>
+                <p class="pp-grid">
+                  <img src="assets/img/crowd-i.png" alt="" /> Good for avoiding
+                  crowds
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="popular-package-slider">
+            <h3 class="pp-slider-top-head">Explore our promoted experiences</h3>
+            <div class="owl-carousel owl-carousel-basic owl-theme">
+              <div class="travel-card pp-card" data-aos="fade-up">
+                <a href="popular-destinations.html">
+                  <figure class="travel-img">
+                    <img src="assets/img/image 2.jpg" alt="" />
+                  </figure>
+                  <div class="travel-card-content">
+                    <p class="pp-card-top-title">
+                      <img
+                        src="assets/img/world.png"
+                        style="width: auto"
+                        alt=""
+                      />
+                      Istanbul, Turkey
+                    </p>
+                    <h3 class="travel-title">BODRUM ORAK ISLAND BOAT TRIP</h3>
+
+                    <ul class="pp-card-footer">
+                      <li>
+                        <p>from</p>
+                        <h4 class="txt-orange ml-2">$200.90</h4>
+                      </li>
+                      <li><p>per group</p></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+              <div class="travel-card pp-card" data-aos="fade-up">
+                <a href="popular-destinations.html">
+                  <figure class="travel-img">
+                    <img src="assets/img/image 2.jpg" alt="" />
+                  </figure>
+                  <div class="travel-card-content">
+                    <p class="pp-card-top-title">
+                      <img
+                        src="assets/img/world.png"
+                        style="width: auto"
+                        alt=""
+                      />
+                      Istanbul, Turkey
+                    </p>
+                    <h3 class="travel-title">BODRUM ORAK ISLAND BOAT TRIP</h3>
+
+                    <ul class="pp-card-footer">
+                      <li>
+                        <p>from</p>
+                        <h4 class="txt-orange ml-2">$200.90</h4>
+                      </li>
+                      <li><p>per group</p></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+              <div class="travel-card pp-card" data-aos="fade-up">
+                <a href="popular-destinations.html">
+                  <figure class="travel-img">
+                    <img src="assets/img/image 2.jpg" alt="" />
+                  </figure>
+                  <div class="travel-card-content">
+                    <p class="pp-card-top-title">
+                      <img
+                        src="assets/img/world.png"
+                        style="width: auto"
+                        alt=""
+                      />
+                      Istanbul, Turkey
+                    </p>
+                    <h3 class="travel-title">BODRUM ORAK ISLAND BOAT TRIP</h3>
+
+                    <ul class="pp-card-footer">
+                      <li>
+                        <p>from</p>
+                        <h4 class="txt-orange ml-2">$200.90</h4>
+                      </li>
+                      <li><p>per group</p></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+              <div class="travel-card pp-card" data-aos="fade-up">
+                <a href="popular-destinations.html">
+                  <figure class="travel-img">
+                    <img src="assets/img/image 2.jpg" alt="" />
+                  </figure>
+                  <div class="travel-card-content">
+                    <p class="pp-card-top-title">
+                      <img
+                        src="assets/img/world.png"
+                        style="width: auto"
+                        alt=""
+                      />
+                      Istanbul, Turkey
+                    </p>
+                    <h3 class="travel-title">BODRUM ORAK ISLAND BOAT TRIP</h3>
+
+                    <ul class="pp-card-footer">
+                      <li>
+                        <p>from</p>
+                        <h4 class="txt-orange ml-2">$200.90</h4>
+                      </li>
+                      <li><p>per group</p></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="de-content-box">
+                <h4>Overview</h4>
+                <p>
+                  Prepare to be awed by Istanbul’s magnificent architecture,
+                  rich history, and eclectic bazaars as you discover the
+                  unmissable highlights of the Old City on this 1-, 2-, or 3-day
+                  private tour. Marvel over the glorious Hagia Sophia, learn how
+                  the Blue Mosque earned its famous nickname, and see the
+                  ancient Basilica Cistern. Tour Topkapi Palace to gain an
+                  insight into the lavish lifestyles of the Ottoman sultans and
+                  their harem, and browse the legendary Grand Bazaar, where you
+                  find everything from carpets to Turkish delight.
+                </p>
+                <ul class="mt-3">
+                  <li>Face masks required for travellers in public areas</li>
+                  <li>Face masks required for guides in public areas</li>
+                  <li>Hand sanitiser available to travellers and staff</li>
+                  <li>Social distancing enforced throughout the experience</li>
+                  <li>Regularly sanitized high-traffic areas</li>
+                </ul>
+              </div>
+              <div id="accordion" class="custom-accordion mb-4">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        TOUR DETAILS
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div
+                    id="collapseOne"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. 3 wolf moon officia
+                      aute, non cupidatat skateboard dolor brunch. Food truck
+                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                      tempor, sunt aliqua put a bird on it squid single-origin
+                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt
+                      sapiente ea proident. Ad vegan excepteur butcher vice
+                      lomo. Leggings occaecat craft beer farm-to-table, raw
+                      denim aesthetic synth nesciunt you probably haven't heard
+                      of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#collapseTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        TOUR DETAILS
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. 3 wolf moon officia
+                      aute, non cupidatat skateboard dolor brunch. Food truck
+                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                      tempor, sunt aliqua put a bird on it squid single-origin
+                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt
+                      sapiente ea proident. Ad vegan excepteur butcher vice
+                      lomo. Leggings occaecat craft beer farm-to-table, raw
+                      denim aesthetic synth nesciunt you probably haven't heard
+                      of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="true"
+                        aria-controls="collapseThree"
+                      >
+                        TOUR DETAILS
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. 3 wolf moon officia
+                      aute, non cupidatat skateboard dolor brunch. Food truck
+                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                      tempor, sunt aliqua put a bird on it squid single-origin
+                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt
+                      sapiente ea proident. Ad vegan excepteur butcher vice
+                      lomo. Leggings occaecat craft beer farm-to-table, raw
+                      denim aesthetic synth nesciunt you probably haven't heard
+                      of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12">
+              <div class="foot-box">
+                <figure class="foot_logo">
+                  <img src="assets/img/logo.png" alt="" />
+                </figure>
+                <p>
+                  Book your trip in minute, get full Control for much longer.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4">
+              <div class="foot-links">
+                <h5>Company</h5>
+                <ul>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Tours</a></li>
+                  <li><a href="">Destinations</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4">
+              <div class="foot-links">
+                <h5>Contact</h5>
+                <ul>
+                  <li><a href="">Help/FAQ</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Affilates</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4">
+              <div class="foot-links">
+                <h5>More</h5>
+                <ul>
+                  <li><a href="">Airlinefees</a></li>
+                  <li><a href="">Airline</a></li>
+                  <li><a href="">Low fare tips</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+              <ul class="social-links">
+                <li>
+                  <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>All rights reserved@travel.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    </script>
+  </body>
+</html>
