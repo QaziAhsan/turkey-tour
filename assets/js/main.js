@@ -62,3 +62,17 @@ $('.owl-carousel-testimonials').owlCarousel({
         }
     }
 })
+
+$('.single-item-owl').owlCarousel({
+    loop:false,
+    margin:30,
+    nav:true,
+    dots:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        }
+    }
+})
