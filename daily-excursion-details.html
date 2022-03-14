@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <nav id="myHeader" class="navbar relative navbar-expand-lg navbar-light">
+    <nav id="myHeader" class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="assets/img/logo.png" alt=""
@@ -42,10 +42,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="">Destinations</a>
-            <a class="nav-item nav-link" href="">Hotels</a>
-            <a class="nav-item nav-link" href="">Flights</a>
-            <a class="nav-item nav-link" href="">Bookings</a>
+            <div class="menu-dropdown">
+              <a class="nav-item nav-link active menu-dropbtn"
+                >Destinations<i class="fa-solid fa-caret-down"></i
+              ></a>
+              <div class="menu-dropdown-content">
+                <a href="#">İstanbul</a>
+                <a href="#">Antalya</a>
+                <a href="#">Izmir</a>
+              </div>
+            </div>
+
             <a class="nav-item nav-link" href="">About Us</a>
             <a class="nav-item nav-link" href="">Contact Us</a>
             <div class="dropdown">
@@ -68,20 +75,18 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <nav aria-label="breadcrumb" class="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item">
-            <a href="/">Bodrum Excursions</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">Details</li>
-        </ol>
-      </nav>
-    </div>
 
-    <section class="daily-excursion">
+    <section class="daily-excursion mt-5 pt-5">
       <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">
+              <a href="/">Bodrum Excursions</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Details</li>
+          </ol>
+        </nav>
         <div class="inner-head"><h2>Bordum Orak Island Boat Trip</h2></div>
 
         <div class="daily-excursion-wrapper">
@@ -114,11 +119,13 @@
                     <p>MEAL</p>
                   </li>
                 </ul>
-                <div class="owl-carousel owl-carousel single-item-owl owl-theme de-img">
-                    <img src="assets/img/boat-large.jpg" alt="" />
-                    <img src="assets/img/boat-large.jpg" alt="" />
+                <div
+                  class="owl-carousel owl-carousel single-item-owl owl-theme de-img"
+                >
+                  <img src="assets/img/boat-large.jpg" alt="" />
+                  <img src="assets/img/boat-large.jpg" alt="" />
                 </div>
-              
+
                 <div class="de-content-box">
                   <h4>BODRUM ORAK ISLAND BOAT TRIP</h4>
                   <p>
@@ -135,7 +142,7 @@
                     boat and swim and sunbathe during the tour.
                   </p>
                 </div>
-                <hr>
+                <hr />
                 <div class="de-content-box">
                   <h4>Fantastic Bays on Our Route</h4>
                   <p>
@@ -434,7 +441,7 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <p>All rights reserved@travel.com</p>
+          <p>© 2022 0KM Tour Planners. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

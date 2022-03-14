@@ -157,6 +157,50 @@ a.nav-item.nav-link:hover {
 .breadcrumb-item.active {
   color: #df6951;
 }
+.menu-dropbtn {
+  cursor: pointer;
+}
+.menu-dropbtn i {
+  margin-left: 5px;
+}
+/* The container <div> - needed to position the dropdown content */
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.menu-dropdown-content {
+  display: none;
+  position: absolute;
+  left: 20px;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+/* Links inside the dropdown */
+.menu-dropdown-content a {
+  color: #212832;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+/* Change color of dropdown links on hover */
+.menu-dropdown-content a:hover {
+  background-color: #df6951;
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.menu-dropdown:hover .menu-dropdown-content {
+  display: block;
+}
+
 /**********sec1************/
 
 .sec_1 {
@@ -1206,7 +1250,7 @@ p.reminder {
 @media (max-width: 1600px) {
   .s1-right img {
     width: 140%;
-}
+  }
   .banner_content h2 {
     font-size: 64px;
   }
@@ -1248,6 +1292,9 @@ p.reminder {
     text-align: center;
     border-radius: 10px;
     border: 1px solid #df6951;
+  }
+  .menu-dropdown-content {
+    position: unset;
   }
   a.nav-item.nav-link {
     color: #df6951 !important;
@@ -1291,9 +1338,9 @@ p.reminder {
   .poppular-packages-grid-details ul li {
     width: 32%;
   }
-  .sec_4 .s4-right{
+  .sec_4 .s4-right {
     display: none;
-      }
+  }
 }
 @media (max-width: 768px) {
   .sec_1 {
@@ -1364,7 +1411,6 @@ p.reminder {
   .mySwiper .swiper-slide {
     height: 90px;
   }
-
 }
 
 @media (max-width: 442px) {
