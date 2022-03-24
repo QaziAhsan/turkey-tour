@@ -203,13 +203,13 @@ a.nav-item.nav-link:hover {
 
 /**********sec1************/
 
-.sec_1 {
+.banner {
   padding: 60px 0;
   background: url(../img/banner-bg.png) center center no-repeat;
   background-size: cover;
   overflow: hidden;
 }
-.sec_1 .row {
+.banner .row {
   align-items: center;
 }
 .banner_content {
@@ -1343,7 +1343,7 @@ p.reminder {
   }
 }
 @media (max-width: 768px) {
-  .sec_1 {
+  .banner {
     padding: 50px 0;
   }
   .sec_2,
